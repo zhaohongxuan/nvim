@@ -51,6 +51,7 @@ local plugins = {
     dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
   },
 
+  {'akinsho/toggleterm.nvim', version = "*", config = true}
 }
 local opts = {} -- 注意要定义这个变量
 

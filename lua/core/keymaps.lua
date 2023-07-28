@@ -7,14 +7,11 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- ---------- Normal Mode---------- ---
-keymap.set("n", "<leader>sv", "<C-w>v", { silent = true }) -- 水平新增窗口
-keymap.set("n", "<leader>sh", "<C-w>s", { silent = true }) -- 垂直新增窗口
-
+---------- Normal Mode---------- ---
 keymap.set("n", "<leader>nh", ":nohl<CR>", { silent = true })
 
-keymap.set("n", "<C-L>", ":bnext<CR>", {silent = true})
-keymap.set("n", "<C-H>", ":bprevious<CR>", {silent = true})
+keymap.set("n", "<C-L>", ":bnext<CR>", { silent = true })
+keymap.set("n", "<C-H>", ":bprevious<CR>", { silent = true })
 
 -- BufferLine
 keymap.set("n", "<leader>bf", ":BufferLinePick<CR>", { silent = true })
@@ -72,3 +69,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+local builtin = require('telescope.builtin')
+-- Telescope
+keymap.set('n', '<leader><space>', builtin.find_files, {})
+keymap.set('n', '<leader>sg', builtin.live_grep, {}) -- require ripgrep
+keymap.set('n', '<leader>sb', builtin.buffers, {})
+keymap.set('n', '<leader>st', builtin.help_tags, {})
+keymap.set('n', '<leader>sk', builtin.keymaps, {})
+keymap.set('n', '<leader>sm', builtin.marks, {})
+keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, {})
+
+
+-- Gitsigns
+keymap.set('n', ']h', ':Gitsigns next_hunk<CR>', { silent = true })
+keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>', { silent = true })
+keymap.set({ 'n', 'v' }, '<leader>gs', ':Gitsigns stage_hunk<CR>', { silent = true })
+keymap.set({ 'n', 'v' }, '<leader>gr', ':Gitsigns reset_hunk<CR>', { silent = true })
+keymap.set('n', '<leader>gb', ':Gitsigns blame_line<CR>', { silent = true })
+keymap.set('n', '<leader>gd', ':Gitsigns diffthis<CR>', { silent = true })

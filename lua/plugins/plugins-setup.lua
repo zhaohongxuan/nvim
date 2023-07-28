@@ -32,6 +32,7 @@ local plugins = {
     "neovim/nvim-lspconfig"
   },
 
+  "phaazon/hop.nvim",
       -- 自动补全
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
@@ -48,9 +49,10 @@ local plugins = {
 
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1', -- 文件检索
-    dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
+     dependencies = { {'nvim-lua/plenary.nvim'} }, -- requires要改为dependencies
   },
 
+  'nvim-telescope/telescope-project.nvim',
   {'akinsho/toggleterm.nvim', version = "*", config = true}
 }
 local opts = {} -- 注意要定义这个变量

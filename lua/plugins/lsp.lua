@@ -17,7 +17,15 @@ require("mason-lspconfig").setup({
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+local navic = require("nvim-navic")
+local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+end
+
 local lsconfig = require("lspconfig")
+
 
 -- Setup language servers.
 lsconfig.lua_ls.setup {
@@ -46,11 +54,14 @@ lsconfig.lua_ls.setup {
     },
   },
   capabilities = capabilities,
+  on_attach = on_attach
 }
 lsconfig.tsserver.setup {
   capabilities = capabilities,
+  on_attach = on_attach
 }
 lsconfig.pyright.setup {
   capabilities = capabilities,
+  on_attach = on_attach
 }
 

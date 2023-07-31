@@ -2,23 +2,62 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>")
+keymap.set("n", ";", ":")
 
 -- ---------- Visual Mode ---------- ---
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
----------- Normal Mode---------- ---
-keymap.set("n", "<leader>nh", ":nohl<CR>", { silent = true })
+-- windows
+keymap.set("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
+keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
+keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
+keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
 
-keymap.set("n", "<C-L>", ":bnext<CR>", { silent = true })
-keymap.set("n", "<C-H>", ":bprevious<CR>", { silent = true })
+-- Move to window using the <ctrl> hjkl keys
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
+
+keymap.set({ "i", "n" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear hlsearch" ,noremap = true})
+--
 -- BufferLine
+keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+keymap.set("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+keymap.set("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 keymap.set("n", "<leader>bf", ":BufferLinePick<CR>", { silent = true })
 keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", { silent = true })
+keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
-keymap.set('n', '<space>w', ":w", { silent = true })
+keymap.set('n', '<space>w', ":w<cr>", { silent = true })
 keymap.set("n", "<leader>Q", ":qa!<CR>")
+--
+-- highlights under cursor
+if vim.fn.has("nvim-0.9.0") == 1 then
+  keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+end
+
+-- navigation 
+keymap.set({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
+keymap.set("n", "C-[", "C-o", { desc = "Navigate to last location" })
+keymap.set("n", "C-]", "C-i", { desc = "Navigate to previous location" })
+
+-- save file
+keymap.set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+keymap.set("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", { noremap = true })
+
+-- Resize window using <ctrl> arrow keys
+keymap.set("n", "<A-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+
+-- new file
+keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 -- ---------- Edit Nvim Config------ ---
 keymap.set("n", "<leader>ve", ":e ~/.config/nvim/init.lua<CR>", { silent = true })
@@ -74,6 +113,7 @@ local builtin = require('telescope.builtin')
 -- Telescope
 keymap.set('n', '<leader><space>', builtin.find_files, {})
 keymap.set('n', '<leader>sg', builtin.live_grep, {}) -- require ripgrep
+keymap.set('n', '<leader>sr', builtin.oldfiles, {}) -- require ripgrep
 keymap.set('n', '<leader>sb', builtin.buffers, {})
 keymap.set('n', '<leader>st', builtin.help_tags, {})
 keymap.set('n', '<leader>sk', builtin.keymaps, {})

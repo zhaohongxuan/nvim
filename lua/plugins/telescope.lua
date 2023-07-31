@@ -1,7 +1,14 @@
 
-require'telescope'.load_extension('project')
+require("telescope").load_extension("project")
+require("telescope").load_extension("file_browser")
 
 require('telescope').setup {
+  defaults = {
+    layout_config = {
+      vertical = { width = 0.5 }
+    },
+  },
+  -- other defaults configuration here
   extensions = {
     project = {
       base_dirs = {

@@ -47,7 +47,7 @@ local plugins = {
 
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',                                -- 文件检索
+    tag = '0.1.5',                                -- 文件检索
     dependencies = { 'nvim-lua/plenary.nvim' },   -- requires要改为dependencies
   },
   {

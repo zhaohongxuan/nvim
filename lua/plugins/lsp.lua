@@ -11,7 +11,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "lua_ls",'tsserver',"pyright"
+    "lua_ls",'tsserver',"pyright","jdtls"
   },
 })
 
@@ -61,6 +61,11 @@ lsconfig.tsserver.setup {
   on_attach = on_attach
 }
 lsconfig.pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+lsconfig.jdtls.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }

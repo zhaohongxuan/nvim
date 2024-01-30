@@ -28,6 +28,8 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),  -- 取消补全，esc也可以退出
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
+    ["<S-D-Space>"] = cmp.mapping.complete(),
+
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()

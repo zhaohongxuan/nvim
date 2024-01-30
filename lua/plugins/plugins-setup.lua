@@ -47,8 +47,8 @@ local plugins = {
 
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.5',                                -- 文件检索
-    dependencies = { 'nvim-lua/plenary.nvim' },   -- requires要改为dependencies
+    tag = '0.1.5',                              -- 文件检索
+    dependencies = { 'nvim-lua/plenary.nvim' }, -- requires要改为dependencies
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
@@ -57,7 +57,29 @@ local plugins = {
 
   "SmiteshP/nvim-navic",
   'nvim-telescope/telescope-project.nvim',
-  { 'akinsho/toggleterm.nvim', version = "*", config = true }
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      cn = { -- leetcode.cn
+        enabled = true, ---@type boolean
+        translator = true, ---@type boolean
+        translate_problems = true, ---@type boolean
+      },
+      lang = "java",
+    },
+  }
 }
 local opts = {} -- 注意要定义这个变量
 

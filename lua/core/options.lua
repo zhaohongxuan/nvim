@@ -6,8 +6,6 @@ opt.number = true
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.autowrite = true -- Enable auto write
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.tabstop = 2
-opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.cursorline = true -- Enable highlighting of the current line
@@ -32,8 +30,9 @@ opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.wrap = false -- Disable line wrap
 
+opt.tabstop = 4
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
+opt.shiftwidth = 4 -- Size of an indent
 -- colorscheme
 
 vim.cmd[[colorscheme tokyonight-night]]

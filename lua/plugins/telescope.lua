@@ -13,14 +13,12 @@ require('telescope').setup {
     project = {
       base_dirs = {
         '~/VSCodeProjects',
-        {'~/Developer/'},
-        {'~/IdeaProjects', max_depth = 4},
+        '~/IdeaProjects',
       },
       hidden_files = true, -- default: false
       theme = "dropdown",
       order_by = "asc",
-      search_by = "title",
-      sync_with_nvim_tree = true, -- default false
+      search_by = "title"
     }
   }
 }

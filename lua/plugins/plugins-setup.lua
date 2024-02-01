@@ -56,6 +56,7 @@ local plugins = {
   },
 
   "SmiteshP/nvim-navic",
+  "onsails/lspkind.nvim",
   'nvim-telescope/telescope-project.nvim',
   { 'akinsho/toggleterm.nvim', version = "*", config = true },
   {

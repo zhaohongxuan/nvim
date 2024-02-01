@@ -49,6 +49,13 @@ keymap.set("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window heig
 keymap.set("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 keymap.set("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
+-- Move Lines
+keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- new file
 keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
@@ -59,6 +66,8 @@ keymap.set("n", "<leader>vk", ":e ~/.config/nvim/lua/core/keymaps.lua<CR>", { si
 keymap.set("n", "<leader>vs", ":source ~/.config/nvim/init.lua<CR>")
 
 -- ---------- Plugins ---------- ---
+---- lazy
+keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 keymap.set("n", "<leader>r", ":NvimTreeFocus<CR>", { silent = true })

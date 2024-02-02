@@ -33,6 +33,10 @@ opt.wrap = false -- Disable line wrap
 opt.tabstop = 4
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 4 -- Size of an indent
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- colorscheme
 
 vim.cmd[[colorscheme tokyonight-night]]

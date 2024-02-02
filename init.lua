@@ -1,17 +1,17 @@
-require("plugins.plugins-setup")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+require("plugins")
 require("core.options")
 require("core.keymaps")
--- 插件
-require("plugins/lualine")
-require("plugins/alpha-nvim")
-require("plugins/nvim-tree")
-require("plugins/treesitter")
-require("plugins/lsp")
-require("plugins/cmp")
-require("plugins/comment")
-require("plugins/autopairs")
-require("plugins/bufferline")
-require("plugins/gitsigns")
-require("plugins/telescope")
-require("plugins/toggleterm")
-require("plugins/hop")

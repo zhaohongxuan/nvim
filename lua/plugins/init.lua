@@ -154,7 +154,16 @@ local plugins = {
         "chrisgrieser/nvim-various-textobjs",
         lazy = false,
         opts = { useDefaultKeymaps = true },
-    }
+    },
+    { 'wakatime/vim-wakatime', lazy = false },
+    {
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+
 }
 local opts = {} -- 注意要定义这个变量
 

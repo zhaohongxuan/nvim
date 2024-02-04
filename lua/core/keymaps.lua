@@ -82,6 +82,9 @@ keymap.set('n', '<space>d', vim.diagnostic.open_float)
 keymap.set('n', '[d', vim.diagnostic.goto_prev)
 keymap.set('n', ']d', vim.diagnostic.goto_next)
 keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- LazyGit 
+keymap.set('n','<leader>gg', ':LazyGit<CR>')
 -- --------------------LSP keymap  ------------------------
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

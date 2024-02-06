@@ -37,16 +37,4 @@ opt.shiftwidth = 4    -- Size of an indent
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- colorscheme
-
-vim.cmd [[colorscheme tokyonight-night]]
-
 vim.cmd [[ set noswapfile ]]
-
--- 启用光标闪烁
-vim.cmd [[ set guicursor+=a:blinkon0]]
-vim.cmd [[set t_vb=]]
-
--- 禁用光标闪烁
--- vim.cmd('set guicursor-=a:blinkon0')
--- vim.cmd('set t_vb=')

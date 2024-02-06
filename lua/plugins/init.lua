@@ -1,12 +1,18 @@
 local leet_arg = "leetcode.nvim"
 local plugins = {
     {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = function ()
+           require("plugins.configs.catppuccin") 
+        end
+    },
+
+    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {
-            transparent = true
-        },
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -149,11 +155,6 @@ local plugins = {
             lang = "java",
             arg = leet_arg,
         },
-    },
-    {
-        "chrisgrieser/nvim-various-textobjs",
-        lazy = false,
-        opts = { useDefaultKeymaps = true },
     },
     { 'wakatime/vim-wakatime', lazy = false },
     {

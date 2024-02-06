@@ -18,12 +18,17 @@ keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true }
 
 keymap.set({ "i", "n" }, "<esc>", "<cmd>nohlsearch<cr><esc>", { desc = "Escape and clear elsearch", noremap = true })
 
+-- ---------- Edit Nvim Config------ ---
+keymap.set("n", "<leader>ve", ":e ~/.config/nvim/init.lua<CR>", { silent = true })
+keymap.set("n", "<leader>vk", ":e ~/.config/nvim/lua/core/keymaps.lua<CR>", { silent = true })
+keymap.set("n", "<leader>vs", "<cmd>lua ReloadConfig()<CR>")
+
 -- BufferLine
 keymap.set("n", "<A-[>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 keymap.set("n", "<A-]>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 keymap.set("n", "<leader>bf", ":BufferLinePick<CR>", { silent = true })
 keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", { silent = true })
-keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 keymap.set('n', '<space>w', ":w<cr>", { silent = true })
 keymap.set("n", "<leader>Q", ":qa!<CR>")
@@ -60,10 +65,6 @@ keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- new file
 keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
--- ---------- Edit Nvim Config------ ---
-keymap.set("n", "<leader>ve", ":e ~/.config/nvim/init.lua<CR>", { silent = true })
-keymap.set("n", "<leader>vk", ":e ~/.config/nvim/lua/core/keymaps.lua<CR>", { silent = true })
-keymap.set("n", "<leader>vs", ":source ~/.config/nvim/init.lua<CR>")
 
 -- ---------- Plugins ---------- ---
 ---- lazy

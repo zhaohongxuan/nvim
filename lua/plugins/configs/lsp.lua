@@ -110,7 +110,7 @@ lsconfig.gopls.setup {
                 unusedparams = true,
                 shadow = true,
             },
-            staticcheck = true,
+         --   staticcheck = true,
         },
     },
     on_attach = on_attach,

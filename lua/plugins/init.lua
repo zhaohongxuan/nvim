@@ -16,7 +16,7 @@ local plugins = {
     },
     {
         "nvim-lualine/lualine.nvim",
-        opts = function()
+        config = function()
             require("plugins.configs.lualine")
         end
     },
@@ -106,7 +106,7 @@ local plugins = {
     {
         "akinsho/bufferline.nvim",
         version = "*",
-        opts = function()
+        config = function()
             require("plugins.configs.bufferline")
         end
 

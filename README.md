@@ -17,30 +17,34 @@ A lightweight and mordern neovim configuration for my personal usage.
 ## Structure
 
 ```
-~/.config/nvim
+~/.config/nvim (main*) » tree                                                                                                                                                     xuan@xuans
 .
 ├── README.md
 ├── init.lua
 ├── lazy-lock.json
 └── lua
     ├── core
+    │   ├── autocmds.lua
     │   ├── keymaps.lua
     │   └── options.lua
     └── plugins
-        ├── alpha-nvim.lua
-        ├── autopairs.lua
-        ├── bufferline.lua
-        ├── cmp.lua
-        ├── comment.lua
-        ├── gitsigns.lua
-        ├── hop.lua
-        ├── lsp.lua
-        ├── lualine.lua
-        ├── nvim-tree.lua
-        ├── plugins-setup.lua
-        ├── telescope.lua
-        ├── toggleterm.lua
-        └── treesitter.lua
+        ├── configs
+        │   ├── alpha-nvim.lua
+        │   ├── autopairs.lua
+        │   ├── bufferline.lua
+        │   ├── catppuccin.lua
+        │   ├── cmp.lua
+        │   ├── comment.lua
+        │   ├── gitsigns.lua
+        │   ├── hop.lua
+        │   ├── lsp.lua
+        │   ├── lualine.lua
+        │   ├── nvim-tree.lua
+        │   ├── telescope.lua
+        │   └── treesitter.lua
+        └── init.lua
+
+5 directories, 20 files
 ```
 
 - the `init.lua`  is the entrance of the nvim configuration

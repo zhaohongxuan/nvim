@@ -13,6 +13,8 @@ opt.cursorline = true -- Enable highlighting of the current line
 opt.wrap = false
 
 opt.cursorline = true
+opt.list = true
+opt.listchars:append({ space = '.', tab = '▸..',  trail = '·' })
 
 opt.mouse:append("a")
 

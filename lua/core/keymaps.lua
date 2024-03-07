@@ -3,6 +3,8 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>")
 keymap.set("n", ";", ":")
+keymap.set({ 'n', 'v' }, 'H', '^')
+keymap.set({ 'n', 'v' }, 'L', '$')
 
 -- ---------- Visual Mode ---------- ---
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -79,8 +81,8 @@ keymap.set('n', '[d', vim.diagnostic.goto_prev)
 keymap.set('n', ']d', vim.diagnostic.goto_next)
 keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
--- LazyGit 
-keymap.set('n','<leader>gg', ':LazyGit<CR>')
+-- LazyGit
+keymap.set('n', '<leader>gg', ':LazyGit<CR>')
 
 local builtin = require('telescope.builtin')
 -- Telescope
@@ -111,4 +113,5 @@ keymap.set('n', '<leader>ll', ':Leet list<CR>', { silent = true })
 keymap.set('n', '<leader>ld', ':Leet desc<CR>', { silent = true })
 keymap.set('n', '<leader>lr', ':Leet run<CR>', { silent = true })
 keymap.set('n', '<leader>ls', ':Leet submit<CR>', { silent = true })
+keymap.set('n', '<leader>lt', ':Leet tabs<CR>', { silent = true })
 keymap.set('n', '<leader>lk', ':Leet lang<CR>', { silent = true })

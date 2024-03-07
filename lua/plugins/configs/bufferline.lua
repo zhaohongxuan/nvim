@@ -16,6 +16,7 @@ bufferline.setup({
                 text = "Nvim tree",
                 text_align = "center",
                 highlight = "Directory",
+                seprator = true
             }
         },
     }

@@ -2,7 +2,7 @@ require("nvim-tree").setup({
     sort_by = "case_sensitive",
     sync_root_with_cwd = true,
     view = {
-        width = 40,
+        width = 50,
     },
     renderer = {
         group_empty = true,

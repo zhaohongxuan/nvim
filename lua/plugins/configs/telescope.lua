@@ -12,13 +12,19 @@ require('telescope').setup {
     extensions = {
         project = {
             base_dirs = {
-                '~/VSCodeProjects',
-                '~/IdeaProjects',
+                '/Users/hank.zhao/VSCodeProjects',
+                '/Users/hank.zhao/IdeaProjects',
+                '/Users/hank.zhao/GoProjects/src/growth-marketing/',
             },
             hidden_files = true, -- default: false
             theme = "dropdown",
             order_by = "asc",
-            search_by = "title"
+            sync_with_nvim_tree = true, -- default false
+            search_by = "title",
+            on_project_selected = function(prompt_bufnr)
+                -- Do anything you want in here. For example:
+                project_actions.change_working_directory(prompt_bufnr, false)
+            end,
         }
     }
 }

@@ -39,4 +39,7 @@ opt.shiftwidth = 4    -- Size of an indent
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.cmd[[colorscheme tokyonight-night]]
+
+
 vim.cmd [[ set noswapfile ]]

@@ -1,17 +1,3 @@
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    sync_root_with_cwd = true,
-    view = {
-        width = 50,
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = true,
-    },
-})
-
 local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
@@ -36,4 +22,16 @@ require("nvim-tree").setup {
     ---
     on_attach = my_on_attach,
     ---
+    sort_by = "case_sensitive",
+    sync_root_with_cwd = true,
+    view = {
+        width = "16%",
+        side = "left"
+    },
+    renderer = {
+        group_empty = true,
+    },
+    filters = {
+        dotfiles = true,
+    },
 }

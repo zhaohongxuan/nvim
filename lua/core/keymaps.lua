@@ -93,7 +93,6 @@ keymap.set('n', '<leader>sb', builtin.buffers, {})
 keymap.set('n', '<leader>st', builtin.help_tags, {})
 keymap.set('n', '<leader>sk', builtin.keymaps, {})
 keymap.set('n', '<leader>sm', builtin.marks, {})
-keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, {})
 
 keymap.set('n', '<C-p>',
     ":lua require'telescope'.extensions.project.project{}<CR>",

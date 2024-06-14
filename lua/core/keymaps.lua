@@ -114,3 +114,6 @@ keymap.set('n', '<leader>lr', ':Leet run<CR>', { silent = true })
 keymap.set('n', '<leader>ls', ':Leet submit<CR>', { silent = true })
 keymap.set('n', '<leader>lt', ':Leet tabs<CR>', { silent = true })
 keymap.set('n', '<leader>lk', ':Leet lang<CR>', { silent = true })
+
+-- go 
+keymap.set('n', '<leader>gc', ':GoRun %<CR>', {silent = true})

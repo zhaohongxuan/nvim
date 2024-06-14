@@ -1,15 +1,21 @@
- local status_ok, bufferline = pcall(require, "bufferline")
- if not status_ok then
-     return
- end
+local status_ok, bufferline = pcall(require, "bufferline")
+if not status_ok then
+    return
+end
 
 bufferline.setup({
     options = {
         numbers = "ordinal",
-        separator_style = "slant",
         diagnostics = "nvim_lsp",
-        show_close_icon = false,
+        show_close_icon = true,
+        separator_style = 'slant',
+        style_preset = bufferline.style_preset.default,
         event = "VeryLazy",
+        hover = {
+            enabled = true,
+            delay = 200,
+            reveal = { 'close' }
+        },
         offsets = {
             {
                 filetype = "NvimTree",

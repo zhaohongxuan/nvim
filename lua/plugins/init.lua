@@ -4,7 +4,13 @@ local plugins = {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
+        opts = {
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            },
+        },
     },
     {
         "folke/tokyonight.nvim",
@@ -179,7 +185,7 @@ local plugins = {
                 translator = true, ---@type boolean
                 translate_problems = true, ---@type boolean
             },
-            lang = "java",
+            lang = "go",
             arg = leet_arg,
         },
     },
